@@ -61,3 +61,15 @@ De inhoud is gebaseerd op de schoolhandleiding en trainersgids van 25 september 
 Huisstijl overgenomen van https://www.3dindeklas.nl/: paars `#4c325b`, geel `#fbbd30`, turquoise `#5ab3b1` en Quicksand. Logo en favicon behoren bij 3dindeklas. Quicksand is beschikbaar onder de SIL Open Font License; zie `assets/OFL.txt`.
 
 Er staan geen analytics, advertentietrackers, formulieren, cookies of lokale opslag in de sitecode. Het openen van een externe link valt onder die externe website. Hostingproviders kunnen eigen technische loggegevens verwerken.
+
+## Meerdere printers (eerste opzet)
+
+Open `printers.html` voor de P1S, K2 en MK4S. De bestaande Hi Combo-gids blijft op `index.html`. Nieuwe printergidsen worden samengesteld uit `content/catalog.json`; bewerk de gegenereerde HTML niet rechtstreeks.
+
+```sh
+npm run build:guides
+npm test
+npm run check:guides
+```
+
+De statische uitvoer wordt meegecommit en werkt op GitHub Pages vanuit main/root. De drie nieuwe gidsen zijn basisgidsen, nog geen complete bedieningshandleidingen. Zie [het uitbreidingsplan](docs/multi-printer-plan.md) voor het datamodel, dynamische onderdelen, migratie, testcriteria en vervolgwerk.
