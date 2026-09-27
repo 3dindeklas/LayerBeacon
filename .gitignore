@@ -1,0 +1,5 @@
+node_modules/
+.sites-runtime/
+.openai/
+dist/
+.DS_Store
