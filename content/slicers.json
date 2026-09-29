@@ -1,0 +1,267 @@
+[
+  {
+    "id": "creality-print",
+    "name": "Creality Print",
+    "docs": "https://wiki.creality.com/en/software/6-0/calibration-tutorial",
+    "testedVersion": null,
+    "steps": [
+      {
+        "id": "software-1",
+        "title": "Prepare · kies je machine",
+        "body": [
+          {
+            "type": "p",
+            "text": "Selecteer {{profileName}}, de werkelijke nozzlemaat en de gebruikte bouwplaat. Controleer de instellingen opnieuw bij een 3MF-project van iemand anders."
+          }
+        ]
+      },
+      {
+        "id": "software-2",
+        "title": "Importeer · controleer de maten",
+        "body": [
+          {
+            "type": "p",
+            "text": "STL bevat vooral de vorm. Een 3MF-project kan ook kleuren en profielen bevatten. Controleer de schaal in millimeters."
+          }
+        ]
+      },
+      {
+        "id": "software-3",
+        "title": "Rotate / Lay on Face · leg stabiel neer",
+        "body": [
+          {
+            "type": "p",
+            "text": "Een vlakke basis helpt de hechting. Draai het ontwerp eerst om supports en printtijd te beperken. Schaal alleen als de afmetingen mogen veranderen."
+          }
+        ]
+      },
+      {
+        "id": "software-4",
+        "title": "Materiaal & proces · begin eenvoudig",
+        "body": [
+          {
+            "type": "p",
+            "text": "Kies een passend profiel en bijvoorbeeld 0,20 mm laaghoogte. Neem voor onbekend PLA geen highspeed-profiel op goed geluk."
+          }
+        ]
+      },
+      {
+        "id": "software-5",
+        "title": "Slice Plate / Preview · kijk door de lagen",
+        "body": [
+          {
+            "type": "p",
+            "text": "Controleer eerste laag, ontbrekende letters, zwevende delen en supportdekking. Bekijk totale tijd en materiaal, inclusief kleurwissels en hulpstructuren."
+          }
+        ]
+      },
+      {
+        "id": "software-6",
+        "title": "Print Plate · controleer de bestemming",
+        "body": [
+          {
+            "type": "p",
+            "text": "Controleer de fysieke printer en de gekozen materiaalroute. Bewaar na een geslaagde test de 3MF en een herkenbaar schoolprofiel."
+          }
+        ]
+      }
+    ],
+    "calibration": {
+      "id": "calibration",
+      "title": "Wanneer gebruik je de kalibratiefuncties?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Los eerst mechanische problemen, vocht en een slechte eerste laag op. Kalibreer vervolgens alleen met een concrete reden en verander één instelling tegelijk."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Temperature: een bruikbare nozzletemperatuur vinden.",
+            "Flow rate: de hoeveelheid geëxtrudeerd materiaal afstellen.",
+            "Pressure advance: materiaaldruk bij versnellen en vertragen regelen.",
+            "Max volume flow: de haalbare materiaalstroom per seconde bepalen."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Flow ratio en maximale volumestroom zijn verschillende instellingen. Een verstopping los je niet op door steeds meer flow te vragen. Sla de geteste waarden bewust op in een eigen profiel."
+        },
+        {
+          "type": "link",
+          "text": "Documentatie van Creality Print ↗",
+          "href": "https://wiki.creality.com/en/software/6-0/calibration-tutorial"
+        }
+      ]
+    }
+  },
+  {
+    "id": "bambu-studio",
+    "name": "Bambu Studio",
+    "docs": "https://github.com/bambulab/BambuStudio/wiki",
+    "testedVersion": null,
+    "steps": [
+      {
+        "id": "software-1",
+        "title": "Prepare · kies je machine",
+        "body": [
+          {
+            "type": "p",
+            "text": "Selecteer {{profileName}}, de werkelijke nozzlemaat en de gebruikte bouwplaat. Controleer de instellingen opnieuw bij een 3MF-project van iemand anders."
+          }
+        ]
+      },
+      {
+        "id": "software-2",
+        "title": "Importeer · controleer de maten",
+        "body": [
+          {
+            "type": "p",
+            "text": "STL bevat vooral de vorm. Een 3MF-project kan ook kleuren en profielen bevatten. Controleer de schaal in millimeters."
+          }
+        ]
+      },
+      {
+        "id": "software-3",
+        "title": "Rotate / Lay on Face · leg stabiel neer",
+        "body": [
+          {
+            "type": "p",
+            "text": "Een vlakke basis helpt de hechting. Draai het ontwerp eerst om supports en printtijd te beperken. Schaal alleen als de afmetingen mogen veranderen."
+          }
+        ]
+      },
+      {
+        "id": "software-4",
+        "title": "Materiaal & proces · begin eenvoudig",
+        "body": [
+          {
+            "type": "p",
+            "text": "Kies een passend profiel en bijvoorbeeld 0,20 mm laaghoogte. Neem voor onbekend PLA geen highspeed-profiel op goed geluk."
+          }
+        ]
+      },
+      {
+        "id": "software-5",
+        "title": "Slice plate / Preview · kijk door de lagen",
+        "body": [
+          {
+            "type": "p",
+            "text": "Controleer eerste laag, ontbrekende letters, zwevende delen en supportdekking. Bekijk totale tijd en materiaal, inclusief kleurwissels en hulpstructuren."
+          }
+        ]
+      },
+      {
+        "id": "software-6",
+        "title": "Print plate · controleer de bestemming",
+        "body": [
+          {
+            "type": "p",
+            "text": "Controleer de fysieke printer en de gekozen materiaalroute. Bewaar na een geslaagde test de 3MF en een herkenbaar schoolprofiel."
+          }
+        ]
+      }
+    ],
+    "calibration": {
+      "id": "calibration",
+      "title": "Wanneer gebruik je de kalibratiefuncties?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Controleer eerst de mechanische toestand, droogte en eerste laag. Gebruik daarna alleen de kalibraties die Bambu Studio voor jouw printer aanbiedt. De P1S heeft niet dezelfde automatische meetmogelijkheden als elk ander Bambu-model."
+        },
+        {
+          "type": "link",
+          "text": "Bambu Studio-documentatie ↗",
+          "href": "https://github.com/bambulab/BambuStudio/wiki"
+        }
+      ]
+    }
+  },
+  {
+    "id": "prusaslicer",
+    "name": "PrusaSlicer",
+    "docs": "https://help.prusa3d.com/category/prusaslicer_204",
+    "testedVersion": null,
+    "steps": [
+      {
+        "id": "software-1",
+        "title": "Configuratiewizard / printerpreset · kies je machine",
+        "body": [
+          {
+            "type": "p",
+            "text": "Selecteer {{profileName}}, de werkelijke nozzlemaat en de gebruikte bouwplaat. Controleer de instellingen opnieuw bij een 3MF-project van iemand anders."
+          }
+        ]
+      },
+      {
+        "id": "software-2",
+        "title": "Importeer · controleer de maten",
+        "body": [
+          {
+            "type": "p",
+            "text": "STL bevat vooral de vorm. Een 3MF-project kan ook kleuren en profielen bevatten. Controleer de schaal in millimeters."
+          }
+        ]
+      },
+      {
+        "id": "software-3",
+        "title": "Roteren / op vlak plaatsen · leg stabiel neer",
+        "body": [
+          {
+            "type": "p",
+            "text": "Een vlakke basis helpt de hechting. Draai het ontwerp eerst om supports en printtijd te beperken. Schaal alleen als de afmetingen mogen veranderen."
+          }
+        ]
+      },
+      {
+        "id": "software-4",
+        "title": "Materiaal & proces · begin eenvoudig",
+        "body": [
+          {
+            "type": "p",
+            "text": "Kies een passend profiel en bijvoorbeeld 0,20 mm laaghoogte. Neem voor onbekend PLA geen highspeed-profiel op goed geluk."
+          }
+        ]
+      },
+      {
+        "id": "software-5",
+        "title": "Slice now / Preview · kijk door de lagen",
+        "body": [
+          {
+            "type": "p",
+            "text": "Controleer eerste laag, ontbrekende letters, zwevende delen en supportdekking. Bekijk totale tijd en materiaal, inclusief kleurwissels en hulpstructuren."
+          }
+        ]
+      },
+      {
+        "id": "software-6",
+        "title": "Export G-code · controleer de bestemming",
+        "body": [
+          {
+            "type": "p",
+            "text": "Controleer de fysieke printer en de gekozen materiaalroute. Bewaar na een geslaagde test de 3MF en een herkenbaar schoolprofiel."
+          }
+        ]
+      }
+    ],
+    "calibration": {
+      "id": "calibration",
+      "title": "Wanneer gebruik je de kalibratiefuncties?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Begin met de passende printer-, filament- en printpreset. Verander één instelling tegelijk en vergelijk een klein proefmodel. De printer voert zijn eigen kalibraties uit; dat is iets anders dan een filamentprofiel afstellen."
+        },
+        {
+          "type": "link",
+          "text": "PrusaSlicer-documentatie ↗",
+          "href": "https://help.prusa3d.com/category/prusaslicer_204"
+        }
+      ]
+    }
+  }
+]

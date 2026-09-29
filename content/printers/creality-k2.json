@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "id": "creality-k2",
+  "name": "Creality K2",
+  "route": "printer-creality-k2.html",
+  "slicerId": "creality-print",
+  "profileName": "Creality K2",
+  "buildVolumeMm": [
+    260,
+    260,
+    260
+  ],
+  "filamentDiameterMm": 1.75,
+  "standardNozzleMm": 0.4,
+  "offlineMedia": "USB",
+  "review": {
+    "contentStatus": "initial-guide",
+    "firmware": null,
+    "testedAtSchool": false
+  },
+  "defaultSetup": "single",
+  "setups": [
+    {
+      "id": "single",
+      "label": "Externe rol · één materiaal",
+      "capacity": 1,
+      "note": "Gebruik een passende rol en het profiel voor de gemonteerde nozzle en bouwplaat."
+    },
+    {
+      "id": "multicolor",
+      "label": "Met CFS · standaard",
+      "capacity": 4,
+      "note": "Deze uitleg gaat uit van één standaard CFS met vier rolposities. Controleer voor andere uitvoeringen eerst de bijbehorende handleiding."
+    }
+  ],
+  "patches": [
+    {
+      "collection": "steps",
+      "id": "step-2",
+      "mode": "append",
+      "body": [
+        {
+          "type": "p",
+          "text": "K2 met CFS: controleer op het printerscherm de materiaalgegevens van de rol. Controleer vóór het starten ook de CFS-toewijzing in Creality Print.",
+          "setups": [
+            "multicolor"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Ontlaad de eerdere aanvoerroute voordat je naar de externe rol wisselt. Volg hiervoor de K2-handleiding.",
+          "setups": [
+            "single"
+          ]
+        }
+      ]
+    },
+    {
+      "collection": "cases",
+      "id": "fout-eerste-laag",
+      "mode": "append",
+      "body": [
+        {
+          "type": "p",
+          "text": "K2: gebruik het K2-profiel. De afwijkende bouwvolumes en instellingen van K2 Pro en K2 Plus zijn niet bedoeld voor deze printer."
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "fout-fb2844",
+      "title": "FB2844: controleer de filamentbuis",
+      "body": [
+        {
+          "type": "p",
+          "text": "Deze melding kan wijzen op een PTFE-buis die uit een koppeling is gekomen. Noteer waar dit zichtbaar is en stop de aanvoer; trek niet aan vastzittend filament."
+        },
+        {
+          "type": "p",
+          "text": "Volg de officiële procedure voor jouw K2 en de betrokken aansluiting. De bron noemt meerdere modellen: gebruik geen demontagefoto’s van een ander model als werkinstructie."
+        },
+        {
+          "type": "link",
+          "text": "Officiële instructie ↗",
+          "href": "https://wiki.creality.com/en/printers-general-documents/FB2844"
+        }
+      ],
+      "code": "FB2844",
+      "subtitle": "Mogelijk losgeraakte PTFE-aansluiting",
+      "setups": [
+        "multicolor"
+      ],
+      "sourceIds": [
+        "k2-fb2844"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "id": "faq-k2-variant",
+      "title": "Kan ik het K2 Plus-profiel gebruiken?",
+      "body": [
+        {
+          "type": "p",
+          "text": "Nee. Selecteer exact K2. De K2 Pro en K2 Plus hebben andere bouwvolumes en hardware. Ook een gedownload 3MF-project moet je hierop controleren."
+        }
+      ],
+      "group": "Printer & bestanden",
+      "sourceIds": [
+        "k2-specs"
+      ]
+    }
+  ],
+  "maintenance": [
+    {
+      "id": "maintenance-model",
+      "title": "Volgens de fabrikant",
+      "body": [
+        {
+          "type": "p",
+          "text": "Gebruik de onderhoudsinstructie voor {{printerName}}. Neem smeermiddelen, intervallen en demontagestappen van een ander model niet over."
+        }
+      ]
+    }
+  ],
+  "downloads": [],
+  "sources": [
+    {
+      "id": "k2-specs",
+      "label": "Creality K2: specificaties en uitvoeringen",
+      "url": "https://www.creality.com/products/k2-series-3d-printer",
+      "reviewedAt": "2026-09-28"
+    },
+    {
+      "id": "k2-fb2844",
+      "label": "Creality: FB2844 (ook voor K2)",
+      "url": "https://wiki.creality.com/en/printers-general-documents/FB2844",
+      "reviewedAt": "2026-09-29"
+    },
+    {
+      "id": "k2-manual",
+      "label": "K2: officiële handleiding",
+      "url": "https://cdn.creality.com/ow/official/6bbb36e0-25b7-42b9-bb91-0451320ba2b0.pdf",
+      "reviewedAt": "2026-09-28"
+    }
+  ],
+  "supportLinks": [
+    {
+      "label": "Technische hulp van Creality",
+      "url": "https://www.creality.com/support"
+    },
+    {
+      "label": "K2: officiële handleiding",
+      "url": "https://cdn.creality.com/ow/official/6bbb36e0-25b7-42b9-bb91-0451320ba2b0.pdf"
+    }
+  ],
+  "scopeNote": "Dit is de Creality K2 met een bouwvolume van 260 × 260 × 260 mm. K2 Pro, K2 Plus en K2 SE zijn afzonderlijke modellen."
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 2,
+  "brand": "3dindeklas",
+  "schoolYear": "2026/2027",
+  "printers": [
+    "creality-hi",
+    "bambu-p1s",
+    "creality-k2",
+    "prusa-mk4s"
+  ],
+  "defaultPrinter": "creality-hi",
+  "catalogTitle": "Met welke printer werk je?"
+}

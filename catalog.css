@@ -1,0 +1,22 @@
+/* Shared guide additions; the established Hi layout remains in style.css. */
+.guide-selection{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin:0 0 24px}
+.guide-selection label{display:block;font-size:.8rem;font-weight:700;color:var(--purple);margin-bottom:6px}
+.guide-selection select{width:100%;font:inherit;font-size:.9rem;color:var(--purple-dark);padding:12px 32px 12px 12px;border:1px solid var(--line);border-radius:6px;background:#fff}
+.guide-selection select:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.guide-selection noscript{grid-column:1/-1}.printer-overview-link{display:block;font-size:.8rem;font-weight:700;margin-bottom:20px;color:var(--purple)}
+.specs dd>span[data-setups]{color:inherit;margin:0}
+.setup-notes{font-size:.875rem;color:var(--muted);margin:15px 0 0;padding:18px 20px;background:var(--pale);border-radius:8px}
+.setup-notes p+p{margin-top:10px}.setup-notes p:last-child{margin-bottom:0}.guide-status{font-size:.8rem}
+.setup-label{display:block;font-size:.75rem;font-weight:700;color:var(--purple);margin:8px 0 4px}.purple-card .setup-label{color:var(--yellow)}
+.printer-specific{padding:15px 18px;border-left:3px solid var(--teal);background:var(--teal-pale);border-radius:0 6px 6px 0;margin:16px 0}
+.printer-specific>strong{display:block;font-size:.875rem;margin-bottom:8px}.source-links{font-size:.8rem;margin-top:14px;overflow-wrap:anywhere}
+.source-links a{font-weight:500!important}.anchor-alias{display:block;position:relative;scroll-margin-top:120px}
+.steps details[open]{background:var(--pale)}.steps .detail-body{max-width:none}.steps .detail-body p:last-child{margin-bottom:0}
+.maintenance>div>div{min-width:0}.maintenance>div>div>p:last-child{margin-bottom:0}.guide-section .two-col article:only-child{grid-column:1/-1}
+.catalog-main{max-width:1100px;margin:auto;padding:38px 24px 60px}.catalog-main h1{margin:18px 0}.catalog-main .printer-card h2{font-size:1.4rem}
+.printer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px;margin:30px 0}
+.printer-card{display:block;padding:28px;border:1px solid var(--line);border-radius:10px;text-decoration:none;background:var(--pale)}
+.printer-card:hover{border-color:var(--purple)}.printer-card p{margin-top:12px}.catalog-main footer{margin-top:36px}
+body [hidden]{display:none!important}
+@media(max-width:560px){.guide-selection{grid-template-columns:1fr;gap:12px;margin-bottom:18px}.guide-selection select{font-size:.875rem}.setup-notes{padding:15px;font-size:.8rem}.printer-specific{padding:12px}.anchor-alias{scroll-margin-top:95px}}
+@media print{.guide-selection,.setup-label,.printer-overview-link{display:none}.setup-notes{background:none;padding:10px 0}.catalog-main{padding:0}.printer-card{break-inside:avoid}.guide-section .steps details{background:none}.guide-section details:not([open])>.detail-body{display:block!important}.guide-section .detail-body{max-width:none}.source-links{font-size:8pt}.guide-status{font-size:9pt}body [hidden]{display:none!important}.site-footer{display:flex!important}}
