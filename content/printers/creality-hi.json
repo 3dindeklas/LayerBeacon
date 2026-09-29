@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 2,
+  "id": "creality-hi",
+  "name": "Creality Hi Combo",
+  "route": "index.html",
+  "slicerId": "creality-print",
+  "profileName": "Creality Hi",
+  "buildVolumeMm": [
+    260,
+    260,
+    300
+  ],
+  "filamentDiameterMm": 1.75,
+  "standardNozzleMm": 0.4,
+  "offlineMedia": "USB",
+  "review": {
+    "contentStatus": "practical-guide",
+    "firmware": null,
+    "testedAtSchool": false
+  },
+  "defaultSetup": "multicolor",
+  "setups": [
+    {
+      "id": "single",
+      "label": "Externe rol · één materiaal",
+      "capacity": 1,
+      "note": "Gebruik een passende rol en het profiel voor de gemonteerde nozzle en bouwplaat."
+    },
+    {
+      "id": "multicolor",
+      "label": "Met CFS",
+      "capacity": 4,
+      "note": "Deze uitleg gaat uit van één standaard CFS met vier rolposities. Controleer of de rol, het materiaal en de spoelvorm geschikt zijn."
+    }
+  ],
+  "patches": [
+    {
+      "collection": "steps",
+      "id": "step-1",
+      "mode": "replace",
+      "item": {
+        "id": "step-1",
+        "title": "Maak de werkplek en printplaat klaar",
+        "subtitle": "Een goede print begint vóór het opwarmen.",
+        "body": [
+          {
+            "type": "p",
+            "text": "Zet de printer op een stevige tafel. Houd vóór en achter de printer ruimte vrij voor het bewegende bed. Controleer of de kabels en filamentbuizen soepel kunnen bewegen."
+          },
+          {
+            "type": "p",
+            "text": "Verwijder printresten, reinig volgens het advies voor jouw plaat en plaats de plaat vlak terug. Raak het printoppervlak zo weinig mogelijk aan. Controleer bij een nieuwe machine eerst de montage en transportbeveiliging volgens de handleiding."
+          }
+        ]
+      }
+    },
+    {
+      "collection": "steps",
+      "id": "step-3",
+      "mode": "replace",
+      "item": {
+        "id": "step-3",
+        "title": "Bereid je ontwerp voor in Creality Print",
+        "subtitle": "Printer, nozzle, printplaat en materiaal moeten kloppen.",
+        "body": [
+          {
+            "type": "p",
+            "text": "Selecteer Creality Hi, de juiste nozzle en de werkelijk gebruikte plaat. Open je STL of 3MF, controleer de afmetingen in millimeters en kies een passend PLA-profiel."
+          },
+          {
+            "type": "p",
+            "text": "Gebruik een standaardproces van 0,20 mm als startpunt. Controleer instellingen opnieuw wanneer je een gedownload 3MF-project opent: dat kan profielen van iemand anders bevatten."
+          },
+          {
+            "type": "link",
+            "text": "Bekijk het complete stappenplan →",
+            "href": "#creality-print"
+          }
+        ]
+      }
+    },
+    {
+      "collection": "materials",
+      "id": "pla",
+      "mode": "replace",
+      "item": {
+        "id": "pla",
+        "name": "PLA / Hyper PLA",
+        "label": "Begin hiermee",
+        "tone": "good",
+        "text": "Voor lesmodellen, naamplaatjes en prototypes. Makkelijk te printen en stijf, maar beperkt hittebestendig. Kies voor Hyper PLA een passend profiel.",
+        "route": "CFS of extern",
+        "note": "Passende spoel nodig"
+      }
+    },
+    {
+      "collection": "materials",
+      "id": "petg",
+      "mode": "replace",
+      "item": {
+        "id": "petg",
+        "name": "PETG",
+        "label": "Volgende stap",
+        "tone": "teal",
+        "text": "Taaier en meestal beter bestand tegen warmte dan PLA. Kan draden trekken en sterk aan de plaat hechten. Controleer droogte, plaatadvies en een eventuele scheidingslaag.",
+        "route": "CFS of extern",
+        "note": "Passende spoel nodig"
+      }
+    },
+    {
+      "collection": "materials",
+      "id": "tpu",
+      "mode": "replace",
+      "item": {
+        "id": "tpu",
+        "name": "TPU",
+        "label": "Flexibel",
+        "tone": "purple",
+        "text": "Voor voetjes, banden en stootranden. Vereist een geschikte hardheid, droge rol en rustig profiel. Zeer zacht TPU is ongeschikt; volg de specifieke Hi-instructie.",
+        "route": "Alleen extern",
+        "note": "Buiten de CFS"
+      }
+    },
+    {
+      "collection": "materials",
+      "id": "special-pla",
+      "mode": "replace",
+      "item": {
+        "id": "special-pla",
+        "name": "PLA+ / Silk / Matte",
+        "label": "Eerst testen",
+        "tone": "plain",
+        "text": "PLA+ is geen vaste receptuur. Glans, kleurstoffen en andere toevoegingen kunnen temperatuur, snelheid en sterkte beïnvloeden. Gebruik het advies voor die specifieke rol.",
+        "route": "Controleer rol",
+        "note": "CFS alleen indien geschikt"
+      }
+    },
+    {
+      "collection": "materials",
+      "id": "abs-asa",
+      "mode": "replace",
+      "item": {
+        "id": "abs-asa",
+        "name": "ABS / ASA",
+        "label": "Geen startmateriaal",
+        "tone": "caution",
+        "text": "Meer hittebestendig; ASA is ook geschikt voor buiten. Krimp en emissies vragen extra maatregelen. Voor deze open schoolopstelling eerst behuizing en emissiebeheersing beoordelen.",
+        "route": "Eerst beoordelen",
+        "note": "ABS staat in de Hi-specificaties; ASA niet vanzelfsprekend"
+      }
+    },
+    {
+      "collection": "materials",
+      "id": "filled",
+      "mode": "replace",
+      "item": {
+        "id": "filled",
+        "name": "CF / hout / overige",
+        "label": "Specialistisch",
+        "tone": "plain",
+        "text": "Gevulde materialen kunnen slijtage en verstopping geven. Ook PA, PC en oplosbare supports vragen een afzonderlijke materiaalcontrole. PLA-CF op de specificatielijst maakt niet elke gevulde rol geschikt.",
+        "route": "Eerst beoordelen",
+        "note": "Nozzle, profiel én CFS"
+      }
+    },
+    {
+      "collection": "materialNotes",
+      "id": "material-note-1",
+      "mode": "replace",
+      "item": {
+        "id": "material-note-1",
+        "title": "Droog bewaren ≠ actief drogen",
+        "body": [
+          {
+            "type": "p",
+            "text": "De standaard CFS gebruikt droogmiddel en geen verwarming. Een eerder natte rol droog je volgens het filamentmerk. Een lage luchtvochtigheid in de CFS bewijst niet dat de hele rol droog is."
+          }
+        ]
+      }
+    },
+    {
+      "collection": "materialNotes",
+      "id": "material-note-2",
+      "mode": "replace",
+      "item": {
+        "id": "material-note-2",
+        "title": "Welke temperatuur?",
+        "body": [
+          {
+            "type": "p",
+            "text": "Volg het juiste Hi-profiel, de printplaat en het etiket. De printergrenzen van 300 °C nozzle en 100 °C bed zijn geen normale PLA-instellingen. Onbekende rol zonder etiket? Leg deze apart."
+          }
+        ]
+      }
+    },
+    {
+      "collection": "steps",
+      "id": "step-2",
+      "mode": "append",
+      "body": [
+        {
+          "type": "p",
+          "text": "Plaats een passende, vrij draaiende PLA-spoel in de CFS en voer de draad in tot de CFS het overneemt. Controleer materiaal en kleur; zonder RFID vul je die handmatig in.",
+          "setups": [
+            "multicolor"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Gebruik de externe aanvoer volgens de Hi-handleiding. Ontlaad eerst de eerdere filamentroute volledig.",
+          "setups": [
+            "single"
+          ]
+        }
+      ]
+    },
+    {
+      "collection": "steps",
+      "id": "step-4",
+      "mode": "append",
+      "body": [
+        {
+          "type": "p",
+          "text": "Controleer de koppeling tussen je projectfilament en CFS-plaats 1A–1D. Laat bij de eerste test de bedkalibratie uitvoeren.",
+          "setups": [
+            "multicolor"
+          ]
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "fout-cfs",
+      "title": "De CFS voert niet in of trekt niet terug",
+      "subtitle": "Vastlopende rol, stroeve buis of mislukte materiaalwissel",
+      "body": [
+        {
+          "type": "p",
+          "text": "Eerst: noteer de melding, CFS-plaats en het moment waarop het vastloopt.",
+          "tone": "first"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "Controleer of de spoel vrij draait en geen kruislus, vervormde rand of vastzittend uiteinde heeft.",
+            "Controleer PTFE-buizen, koppelingen en de buffer op kinken, scherpe bochten en loszitten.",
+            "Ontlaad met Retract en wacht tot de cyclus klaar is. Forceer niets.",
+            "Test een bekende geschikte PLA-rol in dezelfde plaats.",
+            "Ontlaad correct en test diezelfde referentierol in een andere plaats; pas de mapping aan."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "De beheerder kan daarna volgens de wisselprocedure externe aanvoer vergelijken. Werkt extern ook niet, onderzoek dan extruder, hotend, temperatuur en profiel. Herhaalde mislukte invoerpogingen kunnen de draad verder afslijten."
+        },
+        {
+          "type": "link",
+          "text": "Officiële instructie ↗",
+          "href": "https://wiki.creality.com/en/cr-series/creality-hi"
+        }
+      ],
+      "setups": [
+        "multicolor"
+      ],
+      "sourceIds": [
+        "hi-docs"
+      ]
+    },
+    {
+      "id": "fout-tc2854",
+      "title": "TC2854 tijdens Input Shaping",
+      "subtitle": "Filament belemmert de snijderkalibratie",
+      "body": [
+        {
+          "type": "p",
+          "text": "Eerst: ontlaad met Retract en maak de extruder leeg volgens de scherm- en fabrikantprocedure.",
+          "tone": "first"
+        },
+        {
+          "type": "p",
+          "text": "Input Shaping omvat bij de Hi ook snijderkalibratie. Bij externe aanvoer moet je na de ontlaadcyclus de draad ook uitnemen. Voer de kalibratie daarna opnieuw uit."
+        },
+        {
+          "type": "p",
+          "text": "Blijft de melding staan? Een achtergebleven stukje of detectieprobleem kan de oorzaak zijn. Volg de officiële herstelprocedure of schakel de beheerder in."
+        },
+        {
+          "type": "link",
+          "text": "Creality: TC2854 oplossen ↗",
+          "href": "https://wiki.creality.com/en/cr-series/creality-hi/TC2854-error"
+        }
+      ],
+      "code": "TC2854",
+      "sourceIds": [
+        "hi-docs"
+      ]
+    },
+    {
+      "id": "fout-xs2001",
+      "title": "XS2001 op het scherm",
+      "subtitle": "Bekijk ook de fout die eraan voorafging",
+      "body": [
+        {
+          "type": "p",
+          "text": "Eerst: zoek in Error history de niet-XS2001-melding die vlak ervoor staat.",
+          "tone": "first"
+        },
+        {
+          "type": "p",
+          "text": "XS2001 is vaak een vervolgmelding. Noteer beide codes, het tijdstip en de printer. Bewaar de log en onderzoek eerst de voorafgaande oorzaak. Alleen opnieuw opstarten helpt niet om die te vinden."
+        },
+        {
+          "type": "p",
+          "text": "Bij herhaling: geef de leverancier de meldingen, log en gebruikte bestanden."
+        },
+        {
+          "type": "link",
+          "text": "Creality: XS2001 onderzoeken ↗",
+          "href": "https://wiki.creality.com/en/cr-series/creality-hi/XS2001-error"
+        }
+      ],
+      "code": "XS2001",
+      "sourceIds": [
+        "hi-docs"
+      ]
+    },
+    {
+      "id": "fout-ribbels",
+      "title": "Regelmatige ribbeltjes op de buitenwand",
+      "subtitle": "Controleer eerst welk patroon je ziet",
+      "body": [
+        {
+          "type": "p",
+          "text": "Creality beschrijft een specifiek Hi-wandpatroon waarbij een te lage buitenwandsnelheid een rol kan spelen. De instructie noemt Don’t slow down outer walls onder Cooling en een proef met minimaal 120 mm/s."
+        },
+        {
+          "type": "p",
+          "text": "Dat is geen algemene minimumsnelheid. Pas dit niet blind toe op TPU, overhang of een profiel met onvoldoende materiaaldoorvoer. Vergelijk hetzelfde kleine model vóór en na de wijziging. Gewone ringing door trillingen kan een andere oorzaak hebben."
+        },
+        {
+          "type": "link",
+          "text": "Bekijk de specifieke Hi-instructie ↗",
+          "href": "https://wiki.creality.com/en/cr-series/creality-hi/printing-issue-ringing"
+        }
+      ],
+      "sourceIds": [
+        "hi-docs"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "id": "faq-2-1",
+      "title": "Moet filament van Creality zijn of RFID hebben?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Nee. Geschikt filament van 1,75 mm kan ook zonder RFID worden gebruikt. Controleer kunststof, spoel en profiel en voer de materiaalgegevens handmatig in. Een merknaam alleen is geen garantie dat elke rol door de CFS kan."
+        }
+      ],
+      "group": "Filament & CFS",
+      "setups": [
+        "multicolor"
+      ]
+    },
+    {
+      "id": "faq-2-2",
+      "title": "Welke spoelen passen in de CFS?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Creality noemt een spoeldiameter van 197–202 mm en een breedte van 42–68 mm. De spoel moet vrij kunnen draaien en terugrollen. Vervormde kartonnen spoelen zijn ongeschikt; karton op zichzelf is niet altijd uitgesloten."
+        }
+      ],
+      "group": "Filament & CFS",
+      "setups": [
+        "multicolor"
+      ]
+    },
+    {
+      "id": "faq-2-3",
+      "title": "Kan TPU door de CFS?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Nee, gebruik voor TPU de externe aanvoerroute volgens de specifieke Hi-instructie. Ook buiten de CFS werkt niet elke hardheid: Creality sluit zeer zacht TPU zoals 90A en zachter uit. Controleer vooraf materiaal en profiel."
+        },
+        {
+          "type": "link",
+          "text": "Officiële TPU-instructie (Chinees) ↗",
+          "href": "https://wiki.creality.com/zh/cr-series/creality-hi/print-tpu-filament"
+        }
+      ],
+      "group": "Filament & CFS",
+      "setups": [
+        "multicolor"
+      ]
+    },
+    {
+      "id": "faq-2-4",
+      "title": "Kan ik verschillende kunststoffen combineren?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Begin met dezelfde kunststof, liefst uit dezelfde serie. PLA en PETG hechten onderling slecht en zijn niet zomaar geschikt als dragende delen van één model. Specialistische combinaties voor supportinterfaces vragen zorgvuldig ingestelde spoeling en aparte tests."
+        }
+      ],
+      "group": "Filament & CFS",
+      "setups": [
+        "multicolor"
+      ]
+    },
+    {
+      "id": "faq-2-5",
+      "title": "Droogt de CFS nat filament?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "De standaard CFS bewaart filament met droogmiddel, maar droogt niet actief met warmte. Gebruik voor een natte rol een geschikte droger volgens het advies van het filamentmerk. De vochtmeter meet de lucht in de doos, niet het vocht in de kern van je rol."
+        }
+      ],
+      "group": "Filament & CFS",
+      "setups": [
+        "multicolor"
+      ]
+    }
+  ],
+  "maintenance": [
+    {
+      "id": "maintenance-1",
+      "title": "Wekelijks",
+      "body": [
+        {
+          "type": "p",
+          "text": "Bekijk PTFE-buizen, bufferbevestiging, spoelrollen en droogmiddel. Reinig volgens het plaatadvies."
+        }
+      ],
+      "setups": [
+        "multicolor"
+      ]
+    },
+    {
+      "id": "maintenance-2",
+      "title": "Maandelijks",
+      "body": [
+        {
+          "type": "p",
+          "text": "Controleer de extruder op stof en gruis. Creality adviseert ook Input Shaping, met een lege extruder."
+        }
+      ]
+    },
+    {
+      "id": "maintenance-3",
+      "title": "Bij veel wisselen",
+      "body": [
+        {
+          "type": "p",
+          "text": "Controleer de snijder volgens de Hi-instructie. Creality noemt circa 5 rollen gewone filamenten; bij vezelgevuld materiaal en veel snijacties al na 1 rol."
+        }
+      ]
+    }
+  ],
+  "downloads": [
+    {
+      "label": "Schoolhandleiding Creality Hi Combo",
+      "description": "5 pagina’s · handig om bij de printer te leggen",
+      "path": "downloads/Creality_Hi_Combo_Schoolhandleiding.pdf",
+      "printerId": "creality-hi"
+    }
+  ],
+  "sources": [
+    {
+      "id": "hi-docs",
+      "label": "Creality Hi: handleidingen en onderhoud",
+      "url": "https://wiki.creality.com/en/cr-series/creality-hi",
+      "reviewedAt": "2026-09-29"
+    },
+    {
+      "id": "hi-source-0",
+      "label": "Creality Hi: specificaties en CFS",
+      "url": "https://www.creality.com/products/creality-hi-combo",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "hi-source-1",
+      "label": "Software, firmware en handleiding",
+      "url": "https://www.creality.com/download/creality-hi-combo",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "hi-source-2",
+      "label": "Creality Print: meerkleuren en materiaaltoewijzing",
+      "url": "https://www.creality.com/help/multi-color-printing-guide",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "hi-source-3",
+      "label": "Creality Print: Color Painting",
+      "url": "https://www.creality.com/help/help-introduction-to-the-color-painting-feature",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "hi-source-4",
+      "label": "Creality: uitleg over supports",
+      "url": "https://www.creality.com/blog/what-are-supports-in-3d-printing",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "hi-source-5",
+      "label": "Hi: onderhoud van extruder, sensor en snijder",
+      "url": "https://wiki.creality.com/en/cr-series/creality-hi/extruder-kit",
+      "reviewedAt": "2026-09-25"
+    },
+    {
+      "id": "hi-source-6",
+      "label": "Hi: houder voor de filamentbuffer",
+      "url": "https://wiki.creality.com/en/cr-series/creality-hi/install-filament-buffer-holder",
+      "reviewedAt": "2026-09-25"
+    }
+  ],
+  "supportLinks": [
+    {
+      "label": "Technische hulp van Creality",
+      "url": "https://www.creality.com/support"
+    },
+    {
+      "label": "Hi-handleidingen en reparatievideo’s",
+      "url": "https://wiki.creality.com/en/cr-series/creality-hi"
+    }
+  ],
+  "scopeNote": ""
+}

@@ -1,22 +1,8 @@
-# 🗼 LayerBeacon
+# LayerBeacon · praktische 3D-printhulp
 
-> **Guiding educators through the world of 3D printing, layer by layer.**  
-> *Een complete demonstratiehandleiding en toolkit voor docenten en begeleiders.*
+Praktische 3D-printhulp voor het onderwijs, van 3dindeklas.
 
-Welkom bij **LayerBeacon**! Dit project dient als hét baken voor onderwijsgevenden die aan de slag gaan met 3D-printing. Deze repository bevat alle handleidingen, demo-bestanden en best practices om docenten en werkplekbegeleiders stap voor stap (laag voor laag) door het 3D-printproces te loodsen.
-
-## 🎯 Doel van dit project
-LayerBeacon verlaagt de drempel voor 3D-printen in het onderwijs. Begeleiders vinden hier:
-- 📖 **Stappenplannen:** Van digitaal 3D-ontwerp naar een succesvolle fysieke print.
-- 🛠️ **Demo-bestanden:** Kant-en-klare testmodellen (STL/3MF/G-code) voor live demonstraties.
-- ⚠️ **Troubleshooting:** Eerste hulp bij veelvoorkomende printproblemen (zoals warping, stringing en bed leveling).
-
----
-*Gemaakt met ❤️ voor het onderwijs.*
-
-## Creality Hi Combo-naslagsite
-
-Nederlandstalige naslagsite voor docenten en begeleiders. Bevat snelstart, filamentkeuze, Creality Print, supports, kleurwissels, storingshulp, FAQ, onderhoud en een downloadbare schoolhandleiding.
+Nederlandstalige naslagsite voor docenten en begeleiders. De site ondersteunt de Creality Hi Combo, Bambu Lab P1S, Creality K2 en Original Prusa MK4S.
 
 ## Publiceren op GitHub Pages
 
@@ -33,11 +19,17 @@ Officiële uitleg: https://docs.github.com/en/pages/quickstart
 
 ## Aanpassen
 
-- `index.html`: alle leesbare inhoud en FAQ-antwoorden; geen content verborgen in JavaScript.
-- `style.css`: kleuren, typografie, responsive vormgeving en printweergave.
-- `app.js`: mobiel menu, actieve navigatie en het openen van foutmeldingen via ankerlinks.
-- `assets/`: het bestaande 3dindeklas-logo, favicon en lokaal opgeslagen Quicksand-lettertype.
-- `downloads/`: PDF voor docenten.
+- `content/shared.json`: algemene stappen, filamentuitleg, storingshulp en FAQ.
+- `content/slicers.json`: uitleg voor Creality Print, Bambu Studio en PrusaSlicer.
+- `content/printers/*.json`: specificaties, uitvoeringen, aanvullingen, foutcodes, bronnen en downloads.
+- `templates/guide.html`: het gedeelde sjabloon in de vormgeving van de Hi Combo-gids.
+- `scripts/build-guides.mjs`: validatie, samenstelling en statische HTML-uitvoer.
+- `style.css` en `catalog.css`: kleuren, typografie, responsive vormgeving en printweergave.
+- `app.js`: printer- en uitvoeringskeuze, mobiel menu, navigatie en diepe links.
+- `assets/`: het 3dindeklas-logo, favicon en lokaal opgeslagen Quicksand-lettertype.
+- `downloads/`: modelgebonden PDF-bestanden.
+
+Bewerk de gegenereerde HTML-bestanden niet rechtstreeks. Iedere printer gebruikt dezelfde acht onderdelen als de Hi Combo-gids. Een printerconfiguratie kan algemene informatie aanvullen, vervangen of verwijderen.
 
 Gebruik bijvoorbeeld `#fout-tc2854` of `#fout-eerste-laag` achter de website-URL om direct naar een specifiek probleem te verwijzen. Zonder JavaScript blijven inhoud, normale ankerlinks en uitklapbare onderdelen beschikbaar.
 
@@ -52,19 +44,7 @@ npm install
 npm run dev
 ```
 
-Vite is alleen ontwikkelgereedschap. Voor publiceren via de hoofdmap op GitHub Pages is geen build nodig. Publiceer geen `node_modules` of lokale testbestanden.
-
-## Herkomst en inhoud
-
-De inhoud is gebaseerd op de schoolhandleiding en trainersgids van 25 september 2026. Primaire Creality-bronnen en materiaal-/veiligheidsbronnen zijn gelinkt op de site. Startinstellingen zijn voorstellen, niet op iedere schoolmachine bewezen profielen. Controleer bij inhoudelijke updates de modelspecifieke documentatie.
-
-Huisstijl overgenomen van https://www.3dindeklas.nl/: paars `#4c325b`, geel `#fbbd30`, turquoise `#5ab3b1` en Quicksand. Logo en favicon behoren bij 3dindeklas. Quicksand is beschikbaar onder de SIL Open Font License; zie `assets/OFL.txt`.
-
-Er staan geen analytics, advertentietrackers, formulieren, cookies of lokale opslag in de sitecode. Het openen van een externe link valt onder die externe website. Hostingproviders kunnen eigen technische loggegevens verwerken.
-
-## Meerdere printers (eerste opzet)
-
-Open `printers.html` voor de P1S, K2 en MK4S. De bestaande Hi Combo-gids blijft op `index.html`. Nieuwe printergidsen worden samengesteld uit `content/catalog.json`; bewerk de gegenereerde HTML niet rechtstreeks.
+Inhoud wijzigen en controleren:
 
 ```sh
 npm run build:guides
@@ -72,4 +52,16 @@ npm test
 npm run check:guides
 ```
 
-De statische uitvoer wordt meegecommit en werkt op GitHub Pages vanuit main/root. De drie nieuwe gidsen zijn basisgidsen, nog geen complete bedieningshandleidingen. Zie [het uitbreidingsplan](docs/multi-printer-plan.md) voor het datamodel, dynamische onderdelen, migratie, testcriteria en vervolgwerk.
+Voor de uitgebreide browsercontrole installeer je Chromium voor Playwright en voer je `npm run test:browser` uit. Deze controleert desktop, mobiel, GitHub Pages-subpaden, configuratiekeuzes, diepe links, afdrukweergave en werking zonder JavaScript.
+
+Vite is alleen ontwikkelgereedschap. Voor publiceren via de hoofdmap op GitHub Pages is geen build nodig. Publiceer geen `node_modules` of lokale testbestanden.
+
+## Herkomst en inhoud
+
+De algemene basisuitleg wordt gedeeld. Modelspecificaties, uitzonderingen en foutcodes staan bij de betreffende printer en verwijzen naar fabrikantbronnen. Startinstellingen zijn voorstellen en geen universeel bewezen profielen. De P1S-, K2- en MK4S-gidsen zijn een eerste inhoudelijke versie en zijn nog niet op een schoolprinter getest.
+
+Zie [de technische opzet](docs/multi-printer-plan.md) voor de configuratiestructuur, testcriteria en het toevoegen van printers.
+
+Huisstijl overgenomen van https://www.3dindeklas.nl/: paars `#4c325b`, geel `#fbbd30`, turquoise `#5ab3b1` en Quicksand. Logo en favicon behoren bij 3dindeklas. Quicksand is beschikbaar onder de SIL Open Font License; zie `assets/OFL.txt`.
+
+Er staan geen analytics, advertentietrackers, formulieren, cookies of lokale opslag in de sitecode. Het openen van een externe link valt onder die externe website. Hostingproviders kunnen eigen technische loggegevens verwerken.

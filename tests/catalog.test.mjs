@@ -1,51 +1,66 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync,existsSync} from 'node:fs';
-import {fileURLToPath} from 'node:url';
-import {render,validate,compose} from '../scripts/build-guides.mjs';
-const root = new URL('../',import.meta.url);
-const load = () => JSON.parse(readFileSync(new URL('content/catalog.json',root),'utf8'));
-test('unique printer routes have their own correct volume and software',()=>{
- const d=load(); const pages=render(d);
- assert.equal(pages.size,4);
+import {existsSync, readFileSync} from 'node:fs';
+import {resolve} from 'node:path';
+import {loadContent, render, compose, validate, applyPatches, safeURL, root} from '../scripts/build-guides.mjs';
+const load = loadContent;
+
+test('all four models use the complete eight-section Hi layout',()=>{
+ const d=load(),pages=render(d); assert.equal(pages.size,5);
  for(const p of d.printers){
-  const html=pages.get(`printer-${p.id}.html`);
+  const html=pages.get(p.route);
+  assert.equal((html.match(/class="guide-section/g)||[]).length,8);
+  for(const className of ['site-layout','sidebar','intro','steps','material-table','workflow','settings-panel','troubleshooting','faq-group','maintenance','support-panel']) assert.ok(html.includes(`class="${className}`),`${p.id}: ${className}`);
   assert.ok(html.includes(p.buildVolumeMm.join(' × ')));
   assert.ok(html.includes(d.slicers.find(s=>s.id===p.slicerId).name));
-  assert.ok(!html.includes('href="./downloads/'));
-  for(const match of html.matchAll(/(?:href|src)="\.\/([^"#]+)(?:#[^"]*)?"/g)) assert.ok(pages.has(match[1])||existsSync(new URL(match[1],root)),match[1]);
+  assert.equal(html.includes('href="./downloads/Creality_Hi_Combo_Schoolhandleiding.pdf"'),p.id==='creality-hi');
+  assert.ok(!html.includes('{{'));
  }
 });
-test('unknown references, duplicate routes and invalid dimensions block generation',()=>{
- for(const mutate of [d=>d.printers[0].slicerId='missing',d=>d.printers[0].sourceIds=['missing'],d=>d.printers[1].id=d.printers[0].id,d=>d.printers[0].buildVolumeMm=[0,1,2],d=>d.printers[0].defaultConfiguration='missing',d=>d.sources.p1s.url='javascript:alert(1)',d=>d.printers[0].downloads=['wrong.pdf']]){
-  const d=load();mutate(d);assert.throws(()=>validate(d));
+test('source data patches can append, replace and remove without changing another printer',()=>{
+ const d=load(),p=d.printers.find(p=>p.id==='bambu-p1s');const before=JSON.stringify(d.shared);
+ p.patches=[{collection:'steps',id:'step-1',mode:'append',body:[{type:'p',text:'Unieke aanvulling'}]},{collection:'cases',id:'fout-eerste-laag',mode:'replace',item:{id:'fout-eerste-laag',title:'Vervanging',body:[{type:'p',text:'Unieke vervanging'}]}},{collection:'faq',id:'faq-verschillende-materialen',mode:'remove'}];
+ const result=compose(d,p),other=compose(d,d.printers[0]);
+ assert.equal(result.steps[0].addition[0].text,'Unieke aanvulling');assert.equal(result.cases[0].title,'Vervanging');assert.ok(!result.faq.some(x=>x.id==='faq-verschillende-materialen'));
+ assert.ok(!JSON.stringify(other).includes('Unieke'));assert.equal(JSON.stringify(d.shared),before);
+});
+test('model cases and fault codes never leak across printers',()=>{
+ const pages=render(load());
+ const expected={'TC2854':'index.html','FB2844':'printer-creality-k2.html','26834':'printer-prusa-mk4s.html','fout-ams-aanvoer':'printer-bambu-p1s.html'};
+ for(const [code,route] of Object.entries(expected))for(const [path,html] of pages)assert.equal(html.includes(code),path===route,`${code} in ${path}`);
+ for(const route of ['printer-bambu-p1s.html','printer-prusa-mk4s.html'])assert.ok(!pages.get(route).includes('CFS'));
+});
+test('all local links, anchors and resources resolve under a repository subpath',()=>{
+ const pages=render(load());
+ for(const [path,html] of pages){
+  const ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(x=>x[1]);assert.equal(ids.length,new Set(ids).size,`duplicate ID in ${path}`);
+  for(const match of html.matchAll(/(?:href|src)="([^"]+)"/g)){
+   const href=match[1];
+   if(href.startsWith('#'))assert.ok(ids.includes(href.slice(1)),`${path}: ${href}`);
+   if(href.startsWith('./'))assert.ok(pages.has(href.slice(2))||existsSync(resolve(root,href.slice(2))),`${path}: ${href}`);
+  }
  }
 });
-test('model overrides replace shared content without leaking to another model',()=>{
- const d=load();d.printers[0].overrides['eerste-print']=['Alleen voor P1S'];
- assert.deepEqual(compose(d,d.printers[0])[0].items,['Alleen voor P1S']);
- assert.notDeepEqual(compose(d,d.printers[1])[0].items,['Alleen voor P1S']);
+test('the public Hi anchors and PDF remain compatible',()=>{
+ const html=render(load()).get('index.html');
+ for(const id of ['snelstart','filament','creality-print','supports','storingen','faq','beheer','downloads','faq-formaat','fout-eerste-laag','fout-cfs','fout-tc2854','fout-xs2001','fout-draden','fout-warping','fout-aanvoer','fout-verschuiving','fout-ribbels'])assert.ok(html.includes(`id="${id}"`),id);
+ assert.ok(html.includes('Schooljaar 2026/2027'));
 });
-test('data is escaped as text and source schemes are restricted',()=>{
- const d=load();d.printers[0].name='<script>alert(1)</script>';
- assert.ok(!render(d).get('printer-bambu-p1s.html').includes('<script>alert(1)</script>'));
+test('invalid data, unsupported fields and missing references stop generation',()=>{
+ const mutations=[d=>d.printers[0].slicerId='missing',d=>d.printers[0].cases[0].sourceIds=['missing'],d=>d.printers[1].id=d.printers[0].id,d=>d.printers[0].buildVolumeMm=[0,1,2],d=>d.printers[0].defaultSetup='missing',d=>d.printers[0].cases[0].setups=['unknown'],d=>d.printers[1].route='index.html',d=>d.printers[0].downloads[0].printerId='bambu-p1s',d=>d.printers[1].materials=[],d=>d.shared.steps[0].title='{{unknownToken}}',d=>d.shared.steps[0].body=[{type:'rawHTML',text:'<script>no</script>'}],d=>d.printers[1].patches=[{collection:'steps',id:'missing',mode:'remove'}],d=>d.printers[0].cases[0].body.push({type:'link',text:'bad',href:'javascript:alert(1)'})];
+ for(const mutate of mutations){const d=load();mutate(d);assert.throws(()=>validate(d));}
 });
-
-import vm from 'node:vm';
-test('setup links, invalid setup fallback and configuration changes',()=>{
- for (const setup of ['multicolor','single','unknown']) {
-  const options=[{value:'single'},{value:'multicolor'}];
-  const panels=options.map(o=>({dataset:{configurationPanel:o.value},hidden:false}));
-  const handlers={};
-  const select={options,value:'single',addEventListener:(name,cb)=>handlers[name]=cb};
-  let currentUrl;
-  const context={URL,document:{querySelector:()=>select,querySelectorAll:()=>panels,getElementById:()=>null},location:{href:`https://example.com/LayerBeacon/printer-bambu-p1s.html?setup=${setup}#eerste-print`,hash:'#eerste-print'},history:{replaceState:(_,__,url)=>currentUrl=url},window:{addEventListener:()=>{}}};
-  vm.runInNewContext(readFileSync(new URL('catalog.js',root),'utf8'),context);
-  assert.equal(select.value,setup==='multicolor'?'multicolor':'single');
-  assert.equal(panels.filter(p=>!p.hidden).length,1);
-  select.value='multicolor';handlers.change();
-  assert.equal(currentUrl.searchParams.get('setup'),'multicolor');
-  assert.equal(currentUrl.hash,'#eerste-print');
-  assert.equal(currentUrl.pathname,'/LayerBeacon/printer-bambu-p1s.html');
- }
+test('patches cannot silently overwrite another patch or create an unknown target',()=>{
+ const base={steps:[{id:'x',body:[{type:'p',text:'baseline'}]}]};
+ assert.throws(()=>applyPatches(base,[{collection:'steps',id:'x',mode:'append',body:[]}]));
+ assert.throws(()=>applyPatches(base,[{collection:'steps',id:'x',mode:'replace',item:{id:'y'}}]));
+ assert.throws(()=>applyPatches(base,[{collection:'steps',id:'x',mode:'remove'},{collection:'steps',id:'x',mode:'remove'}]));
+});
+test('untrusted text is escaped and unsafe URL schemes are rejected',()=>{
+ const d=load();d.printers[1].name='<img src=x onerror=alert(1)>';
+ const html=render(d).get('printer-bambu-p1s.html');assert.ok(!html.includes('<img src=x'));assert.ok(html.includes('&lt;img'));
+ for(const url of ['javascript:alert(1)','data:text/html,bad','http://example.com','./../private','//example.com','https://user:pass@example.com'])assert.throws(()=>safeURL(url));
+});
+test('generated pages are synchronized with JSON and the shared template',()=>{
+ for(const [path,html] of render(load()))assert.equal(readFileSync(resolve(root,path),'utf8'),html,`${path}: run npm run build:guides`);
 });

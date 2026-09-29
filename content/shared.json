@@ -1,0 +1,624 @@
+{
+  "schemaVersion": 2,
+  "sections": [
+    {
+      "id": "snelstart",
+      "nav": "Je eerste print",
+      "eyebrow": "EERST DE BASIS",
+      "title": "Je eerste print, stap voor stap",
+      "lead": "Begin met droog PLA, één kleur en een klein model. Zo zie je snel of alles goed werkt."
+    },
+    {
+      "id": "filament",
+      "nav": "Filament kiezen",
+      "eyebrow": "DE JUISTE ROL",
+      "title": "Welk filament kies je?",
+      "lead": "Controleer de kunststof, de bouwplaat en de aanvoerroute. Een materiaalwisselaar stelt eigen eisen aan de rol."
+    },
+    {
+      "id": "software",
+      "nav": "{{slicerName}}",
+      "eyebrow": "VAN BESTAND NAAR PRINT",
+      "title": "Handig werken in {{slicerName}}",
+      "lead": "Vier keuzes vóór je slicet: printer, nozzle, printplaat en materiaal. Knopnamen kunnen per versie verschillen."
+    },
+    {
+      "id": "supports",
+      "nav": "Supports & kleuren",
+      "eyebrow": "SLIMMER PRINTEN",
+      "title": "Supports en meer kleuren",
+      "lead": ""
+    },
+    {
+      "id": "storingen",
+      "nav": "Een probleem oplossen",
+      "eyebrow": "VIND DE EERSTE OORZAAK",
+      "title": "Er gaat iets mis. Wat nu?",
+      "lead": "Wat ging er als eerste mis, op welk moment en wat is er veranderd? Verander één ding tegelijk en vergelijk met een kleine test en een bekende droge PLA-rol."
+    },
+    {
+      "id": "faq",
+      "nav": "Veelgestelde vragen",
+      "eyebrow": "EVEN OPZOEKEN",
+      "title": "Veelgestelde vragen",
+      "lead": ""
+    },
+    {
+      "id": "beheer",
+      "nav": "Onderhoud & hulp",
+      "eyebrow": "ZO HOUD JE HET WERKEND",
+      "title": "Onderhoud en ondersteuning",
+      "lead": ""
+    },
+    {
+      "id": "downloads",
+      "nav": "Downloads & bronnen",
+      "eyebrow": "BIJ DE HAND HOUDEN",
+      "title": "Downloads en bronnen",
+      "lead": ""
+    }
+  ],
+  "steps": [
+    {
+      "id": "step-1",
+      "title": "Maak de werkplek en printplaat klaar",
+      "subtitle": "Een goede print begint vóór het opwarmen.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Zet de printer op een stevige tafel. Controleer of kabels en filamentbuizen vrij kunnen bewegen en houd de bewegingsruimte van de printer vrij."
+        },
+        {
+          "type": "p",
+          "text": "Verwijder printresten, reinig volgens het advies voor jouw plaat en plaats de plaat vlak terug. Raak het printoppervlak zo weinig mogelijk aan. Controleer bij een nieuwe machine eerst de montage en transportbeveiliging volgens de handleiding."
+        }
+      ]
+    },
+    {
+      "id": "step-2",
+      "title": "Controleer en laad het filament",
+      "subtitle": "Lees het etiket; de kleur zegt niets over de kunststof.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Controleer kunststof, diameter van {{filamentDiameter}} mm en spoelvorm. Gebruik de laad- en ontlaadfunctie die bij jouw aanvoerroute hoort. Forceer de draad niet."
+        },
+        {
+          "type": "p",
+          "text": "Controleer het werkelijke materiaal en de kleur in de software. Zet na het ontladen het losse uiteinde op de spoel vast."
+        },
+        {
+          "type": "link",
+          "text": "Welk filament kan ik gebruiken? →",
+          "href": "#filament"
+        }
+      ]
+    },
+    {
+      "id": "step-3",
+      "title": "Bereid je ontwerp voor in {{slicerName}}",
+      "subtitle": "Printer, nozzle, printplaat en materiaal moeten kloppen.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Selecteer {{profileName}}, de juiste nozzle en de werkelijk gebruikte plaat. Open je STL of 3MF, controleer de afmetingen in millimeters en kies een passend PLA-profiel."
+        },
+        {
+          "type": "p",
+          "text": "Gebruik een standaardproces van 0,20 mm als startpunt. Controleer instellingen opnieuw wanneer je een gedownload 3MF-project opent: dat kan profielen van iemand anders bevatten."
+        },
+        {
+          "type": "link",
+          "text": "Bekijk het complete stappenplan →",
+          "href": "#software"
+        }
+      ]
+    },
+    {
+      "id": "step-4",
+      "title": "Slice, bekijk de lagen en start",
+      "subtitle": "De preview vertelt wat de printer gaat doen.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Slice het model. Bekijk de eerste laag en schuif door de lagen in de preview. Controleer zwevende delen, supports, dunne details, printtijd en materiaalverbruik."
+        },
+        {
+          "type": "p",
+          "text": "Kies de juiste fysieke printer en controleer de materiaaltoewijzing. Voer de benodigde kalibraties volgens de handleiding uit. Geen netwerk? Exporteer het voor {{profileName}} geslicete bestand naar {{offlineMedia}}."
+        }
+      ]
+    },
+    {
+      "id": "step-5",
+      "title": "Blijf bij de eerste laag",
+      "subtitle": "Aaneengesloten lijnen die blijven liggen: dat wil je zien.",
+      "body": [
+        {
+          "type": "p",
+          "text": "De banen moeten elkaar raken en aan de plaat blijven hechten. Zie je losse ronde lijnen, schrapen of een klont die wordt meegesleept? Stop de print en onderzoek de oorzaak."
+        },
+        {
+          "type": "p",
+          "text": "Automatische bedmeting helpt, maar maakt een vieze plaat niet schoon en kiest geen geschikt materiaalprofiel voor je."
+        },
+        {
+          "type": "link",
+          "text": "Hulp bij een slechte eerste laag →",
+          "href": "#fout-eerste-laag"
+        }
+      ]
+    },
+    {
+      "id": "step-6",
+      "title": "Laat afkoelen en bewaar je project",
+      "subtitle": "Een geslaagde print is een goed startpunt voor de volgende les.",
+      "body": [
+        {
+          "type": "p",
+          "text": "Laat bed en model afkoelen. Neem de flexibele plaat uit en buig deze voorzichtig; forceer het model niet. Verwijder restjes en bewaar geopende rollen afgesloten met droogmiddel."
+        },
+        {
+          "type": "p",
+          "text": "Sla je project op als 3MF met een herkenbare naam, bijvoorbeeld Klas2_Naamplaat_PLA_v1. Bewaar werkende instellingen als apart schoolprofiel."
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "id": "pla",
+      "name": "PLA",
+      "label": "Begin hiermee",
+      "tone": "good",
+      "text": "Voor lesmodellen, naamplaatjes en prototypes. Makkelijk te printen en stijf, maar beperkt hittebestendig. Gebruik een profiel dat bij de gekozen rol past.",
+      "route": "Rolhouder of uitbreiding",
+      "note": "Controleer spoel en systeem"
+    },
+    {
+      "id": "petg",
+      "name": "PETG",
+      "label": "Volgende stap",
+      "tone": "teal",
+      "text": "Taaier en meestal beter bestand tegen warmte dan PLA. Kan draden trekken en sterk aan de plaat hechten. Controleer droogte, plaatadvies en een eventuele scheidingslaag.",
+      "route": "Rolhouder of uitbreiding",
+      "note": "Controleer spoel en systeem"
+    },
+    {
+      "id": "tpu",
+      "name": "TPU",
+      "label": "Flexibel",
+      "tone": "purple",
+      "text": "Voor voetjes, banden en stootranden. Vereist een geschikte hardheid, droge rol en passend profiel. Controleer of dit specifieke materiaal bij de nozzle en aanvoerroute past.",
+      "route": "Controleer de aanvoer",
+      "note": "Niet elke wisselaar kan flexibel materiaal verwerken"
+    },
+    {
+      "id": "special-pla",
+      "name": "PLA+ / Silk / Matte",
+      "label": "Eerst testen",
+      "tone": "plain",
+      "text": "PLA+ is geen vaste receptuur. Glans, kleurstoffen en andere toevoegingen kunnen temperatuur, snelheid en sterkte beïnvloeden. Gebruik het advies voor die specifieke rol.",
+      "route": "Controleer rol",
+      "note": "Uitbreiding alleen indien geschikt"
+    },
+    {
+      "id": "abs-asa",
+      "name": "ABS / ASA",
+      "label": "Geen startmateriaal",
+      "tone": "caution",
+      "text": "Meer hittebestendig; ASA is ook geschikt voor buiten. Krimp en emissies vragen extra maatregelen. Beoordeel printeropstelling, materiaalprofiel en emissiebeheersing.",
+      "route": "Eerst beoordelen",
+      "note": "Een kast alleen maakt het nog geen geschikt lesmateriaal"
+    },
+    {
+      "id": "filled",
+      "name": "CF / hout / overige",
+      "label": "Specialistisch",
+      "tone": "plain",
+      "text": "Gevulde materialen kunnen slijtage en verstopping geven. Ook PA, PC en oplosbare supports vragen een afzonderlijke materiaalcontrole. Controleer nozzle, tandwielen, profiel en aanvoerroute.",
+      "route": "Eerst beoordelen",
+      "note": "Niet afleiden uit alleen de maximumtemperatuur"
+    }
+  ],
+  "materialNotes": [
+    {
+      "id": "material-note-1",
+      "title": "Droog bewaren en actief drogen",
+      "body": [
+        {
+          "type": "p",
+          "text": "Bewaar rollen afgesloten met geschikt droogmiddel. Volg voor actief drogen de instructie van het filamentmerk. Een lage luchtvochtigheid in een opbergdoos zegt niet hoeveel vocht in de kern van de rol zit."
+        }
+      ]
+    },
+    {
+      "id": "material-note-2",
+      "title": "Welke temperatuur?",
+      "body": [
+        {
+          "type": "p",
+          "text": "Volg het profiel voor {{profileName}}, de printplaat en het etiket. De temperatuurgrenzen van een printer zijn geen normale PLA-instellingen. Onbekende rol zonder etiket? Leg deze apart."
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "support-card-1",
+      "title": "Eerst draaien, dan ondersteunen",
+      "kicker": "TIJDELIJKE STEUN",
+      "body": [
+        {
+          "type": "p",
+          "text": "Een laag moet ergens op rusten. Denk aan de bovenkant van een rechtopstaande letter T. Een support is een tijdelijke steiger; plat neerleggen kan die steiger overbodig maken."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Vertakte supports: vaak handig bij losse details en figuren.",
+            "Normale of vlakvullende supports: vaak bruikbaar onder brede vlakken.",
+            "Alleen vanaf het bed: beperkt waar supports beginnen; controleer of alle delen genoeg steun krijgen."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Support te vast? Test de contactafstand op een klein model. Meer afstand helpt loshalen, maar kan de onderkant ruwer maken."
+        }
+      ]
+    },
+    {
+      "id": "support-card-2",
+      "title": "Kleur kost wisseltijd",
+      "kicker": "MEER KLEUREN, ÉÉN NOZZLE",
+      "body": [
+        {
+          "type": "p",
+          "text": "Bij elke wissel moet oude kleur uit de nozzle en de materiaalstroom weer stabiel worden. Kijk daarom naar het aantal wissels per laag."
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Begin met twee kleuren PLA uit dezelfde serie.",
+            "Koppel kleuren aan onderdelen of gebruik het kleurtekengereedschap van je slicer.",
+            "Letters boven op een naamplaat geven vaak minder wissels dan kleuren naast elkaar over de hele hoogte.",
+            "Vergelijk één kleur en meerdere kleuren in Preview."
+          ]
+        }
+      ],
+      "setups": [
+        "multicolor"
+      ]
+    },
+    {
+      "id": "lespraktijk",
+      "title": "Slim plannen in de les",
+      "body": [
+        {
+          "type": "p",
+          "text": "Laat leerlingen vooraf afmetingen en printtijd controleren. Gebruik een printwachtrij en herkenbare bestandsnamen. Spreek af wie goedkeurt, start en de print ophaalt."
+        }
+      ],
+      "kicker": "VAN ONTWERP NAAR FEEDBACK"
+    }
+  ],
+  "cases": [
+    {
+      "id": "fout-eerste-laag",
+      "title": "De eerste laag blijft niet plakken",
+      "subtitle": "Losse lijnen, open spleten of een model dat wordt meegesleept",
+      "body": [
+        {
+          "type": "p",
+          "text": "Eerst: stop de print voordat een losse basis een grote klont wordt.",
+          "tone": "first"
+        },
+        {
+          "type": "ol",
+          "items": [
+            "Controleer de plaat en het gekozen plaatprofiel.",
+            "Reinig en droog volgens het plaatadvies. Plaats de plaat vlak terug.",
+            "Controleer de nozzle op restmateriaal volgens de fabrikantprocedure.",
+            "Voer bedkalibratie uit en print een klein proefvlak.",
+            "Pas daarna gericht temperatuur, snelheid of brim aan."
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Bij aanhoudend schrapen stoppen en laten beoordelen. Compenseer niet op goed geluk met een Z-offset."
+        }
+      ]
+    },
+    {
+      "id": "fout-draden",
+      "title": "Draden tussen onderdelen of knetterend filament",
+      "subtitle": "Vocht, temperatuur of terugtrekinstellingen",
+      "body": [
+        {
+          "type": "p",
+          "text": "Eerst: vergelijk met een bekende droge rol. Knetteren of bellen zijn aanwijzingen voor vocht, geen bewijs op zichzelf.",
+          "tone": "first"
+        },
+        {
+          "type": "p",
+          "text": "Blijft stringing bestaan, test dan een passende temperatuurverlaging, bijvoorbeeld 5 °C binnen het rolbereik. Pas retraction pas daarna gericht aan. Gebruik de drooginstructies van het merk."
+        }
+      ]
+    },
+    {
+      "id": "fout-warping",
+      "title": "Hoeken trekken omhoog",
+      "subtitle": "Krimp, tocht of onvoldoende hechting",
+      "body": [
+        {
+          "type": "p",
+          "text": "Eerst: stop als de nozzle tegen een opgetrokken hoek kan botsen.",
+          "tone": "first"
+        },
+        {
+          "type": "p",
+          "text": "Controleer plaat, profiel en omgeving. Vergroot zo nodig de basis met een brim of kies een gunstiger oriëntatie. Beoordeel bij ABS/ASA eerst of de printeropstelling en ventilatie geschikt zijn."
+        }
+      ]
+    },
+    {
+      "id": "fout-aanvoer",
+      "title": "Gaten in de print, tikken of geen materiaal",
+      "subtitle": "Te weinig doorvoer, blokkade of te hoge volumestroom",
+      "body": [
+        {
+          "type": "p",
+          "text": "Eerst: controleer de filamentroute en of de werkelijke nozzletemperatuur bij het gekozen materiaal past.",
+          "tone": "first"
+        },
+        {
+          "type": "p",
+          "text": "De beheerder kan de normale invoer testen met de juiste functie en temperatuur voor dit model. Geen constante draad of aanhoudend tikken? Stop en laat extruder en hotend volgens de fabrikantprocedure controleren."
+        },
+        {
+          "type": "p",
+          "text": "Bij te hoge gevraagde doorvoer: verlaag gericht snelheid of maximale volumestroom. Verhoog niet blind de flow. Voer geen willekeurige boor- of naaldprocedure uit."
+        }
+      ]
+    },
+    {
+      "id": "fout-verschuiving",
+      "title": "Een laag is verschoven of er zit een klont rond de printkop",
+      "subtitle": "Botsing, losgeraakt model of een technisch probleem",
+      "body": [
+        {
+          "type": "p",
+          "text": "Eerst: stop, maak een foto en laat afkoelen.",
+          "tone": "first"
+        },
+        {
+          "type": "p",
+          "text": "Bij een verschoven laag: controleer vrije beweging, opgetrokken hoeken en obstakels. Laat een terugkerend probleem op een kleine proef mechanisch beoordelen."
+        },
+        {
+          "type": "p",
+          "text": "Een klont kan draden van de hotend omsluiten. Trek die niet zomaar los. Laat een deskundige de modelspecifieke serviceprocedure volgen."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "id": "faq-formaat",
+      "title": "Hoe groot kan ik printen?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Het nominale bouwvolume is {{buildVolume}} mm. Brim, supports, eventuele uitsluitingszones en een prime- of wipe tower nemen ruimte in. Controleer de bruikbare ruimte in de slicer. Een lang, smal onderdeel kan soms gedraaid op het bed; anders kun je het ontwerp opdelen."
+        }
+      ],
+      "group": "Printer & bestanden"
+    },
+    {
+      "id": "faq-1-2",
+      "title": "Moet ik een STL of een 3MF gebruiken?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Een STL is handig om een vorm te importeren. Een 3MF-project bewaart meer, zoals onderdelen, kleuren en instellingen. Bewaar je eigen geslaagde projecten als 3MF. Controleer bij projecten van anderen opnieuw printer, nozzle, plaat en materiaal."
+        }
+      ],
+      "group": "Printer & bestanden"
+    },
+    {
+      "id": "faq-1-3",
+      "title": "Kan ik zonder wifi printen?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Je kunt in {{slicerName}} een voor {{profileName}} geslicet bestand exporteren naar {{offlineMedia}}. Zet niet alleen een STL op het medium: de printer heeft de berekende printinstructies nodig."
+        }
+      ],
+      "group": "Printer & bestanden"
+    },
+    {
+      "id": "faq-1-4",
+      "title": "Moet ik alle updates direct installeren?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Lees eerst de wijzigingen en test een passende stabiele versie op één machine. Leg daarna samen vast welke versies en profielen de school gebruikt. Werk niet alle printers vlak vóór een les bij zonder tijd voor een proefprint."
+        }
+      ],
+      "group": "Printer & bestanden"
+    },
+    {
+      "id": "faq-3-1",
+      "title": "Waarom is er zoveel afval bij meerdere kleuren?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Alle kleuren gaan door één nozzle. Oude kleur moet worden uitgespoeld bij een wissel. Minder wissels per laag helpt; meerdere gelijke modellen op één plaat kunnen het verlies per model verlagen. Test eerst één model en behoud aanvankelijk de standaard spoelinstellingen."
+        }
+      ],
+      "group": "Printkwaliteit & lespraktijk"
+    },
+    {
+      "id": "faq-3-2",
+      "title": "Moet er lijm op de printplaat?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Dat hangt af van het oppervlak en de kunststof. Lijm kan de hechting helpen, maar bij sommige combinaties juist een scheidingslaag zijn. Controleer dus eerst de exacte printplaat en het materiaaladvies."
+        }
+      ],
+      "group": "Printkwaliteit & lespraktijk"
+    },
+    {
+      "id": "faq-3-3",
+      "title": "Waarom helpt automatisch kalibreren niet altijd?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Bedmeting corrigeert kleine hoogteverschillen. Het lost geen vervuiling, vocht of ongeschikt profiel op. Controleer daarom altijd de werkplek, het materiaal en de eerste laag. Input Shaping is een andere kalibratie dan bedmeting."
+        }
+      ],
+      "group": "Printkwaliteit & lespraktijk"
+    },
+    {
+      "id": "faq-3-4",
+      "title": "Kan de printer zonder toezicht in het lokaal draaien?",
+      "subtitle": "",
+      "body": [
+        {
+          "type": "p",
+          "text": "Spreek af wie verantwoordelijk blijft, hoe vaak wordt gecontroleerd en hoe iemand veilig kan stoppen. Blijf bij de eerste laag. Een camera neemt toezicht en schoolafspraken niet over."
+        }
+      ],
+      "group": "Printkwaliteit & lespraktijk"
+    },
+    {
+      "id": "faq-verschillende-materialen",
+      "title": "Kan ik verschillende kunststoffen combineren?",
+      "body": [
+        {
+          "type": "p",
+          "text": "Begin met dezelfde kunststof, liefst uit dezelfde serie. PLA en PETG hechten onderling slecht en zijn niet zomaar geschikt als dragende delen van één model. Specialistische combinaties voor supportinterfaces vragen aparte tests."
+        }
+      ],
+      "group": "Filament & aanvoer"
+    }
+  ],
+  "maintenance": [
+    {
+      "id": "maintenance-each",
+      "title": "Elke print",
+      "body": [
+        {
+          "type": "p",
+          "text": "Controleer plaat, vrije beweging, filamentroute en profiel. Laat afkoelen na afloop en verwijder restjes."
+        }
+      ]
+    },
+    {
+      "id": "maintenance-weekly",
+      "title": "Regelmatig controleren",
+      "body": [
+        {
+          "type": "p",
+          "text": "Bekijk rollen, kabels en zichtbare filamentbuizen. Controleer droge opslag. Volg voor smeren en vervangen altijd het advies voor het exacte model."
+        }
+      ]
+    },
+    {
+      "id": "maintenance-updates",
+      "title": "Bij een wijziging",
+      "body": [
+        {
+          "type": "p",
+          "text": "Noteer de firmware- en slicerversie. Test een update of gewijzigd profiel op één printer voordat je het tijdens de les gebruikt."
+        }
+      ]
+    }
+  ],
+  "safety": {
+    "title": "Veilig in het lokaal",
+    "text": "Houd handen weg van hete en bewegende delen. Zorg voor een geschikte geventileerde printerplek, bij voorkeur met bronafzuiging: ook PLA geeft deeltjes en dampen af. Spreek af wie toezicht houdt; een camera vervangt dat niet."
+  },
+  "stop": {
+    "title": "Wanneer stop je met zelf proberen?",
+    "text": "Bij rook, brandlucht, elektrische schade, aanhoudend schrapen of een grote klont rond de hotend. Zet de machine veilig uit gebruik en schakel de beheerder of leverancier in. Open tijdens de les geen netspanningsgedeelte."
+  },
+  "settings": {
+    "title": "Gewoon PLA · nozzle 0,4 mm",
+    "note": "Praktische startpunten om te testen, geen universeel printerprofiel. Gebruik bij een andere nozzle het passende fabrikantprofiel.",
+    "values": [
+      {
+        "label": "Laaghoogte",
+        "value": "0,20 mm"
+      },
+      {
+        "label": "Wanden",
+        "value": "3 lijnen"
+      },
+      {
+        "label": "Vulling",
+        "value": "15% gyroid"
+      },
+      {
+        "label": "Brim, indien nodig",
+        "value": "circa 5 mm"
+      }
+    ]
+  },
+  "glossary": [
+    {
+      "term": "Brim",
+      "text": "Een hechtrand rond de voet van je model."
+    },
+    {
+      "term": "Infill",
+      "text": "De vulling ín het model."
+    },
+    {
+      "term": "Prime / wipe tower",
+      "text": "Helpt de materiaalstroom na een wissel stabiliseren."
+    },
+    {
+      "term": "Flush / purge",
+      "text": "Spoelt de vorige kleur of kunststof uit de nozzle."
+    }
+  ],
+  "supportNote": "Behoud eerst de standaard instellingen voor spoelen en de prime- of wipe tower. Meng PLA en PETG niet zomaar als dragende delen van één model. Specialistische supportinterfaces vragen aparte tests.",
+  "helpChecklist": [
+    "Serienummer, printer- en softwareversie",
+    "Foutcode, tijdstip en foto of korte video",
+    "Filamentmerk/type en gebruikte printplaat",
+    "3MF-project, printbestand en beschikbare log",
+    "Wat je al hebt geprobeerd en het resultaat"
+  ],
+  "sources": [
+    {
+      "id": "materiaal-pla",
+      "label": "Materiaalkennis: PLA",
+      "url": "https://help.prusa3d.com/article/pla_2062"
+    },
+    {
+      "id": "materiaal-petg",
+      "label": "Materiaalkennis: PETG",
+      "url": "https://help.prusa3d.com/article/petg_2059"
+    },
+    {
+      "id": "eerste-laag",
+      "label": "Algemene hulp bij de eerste laag",
+      "url": "https://help.prusa3d.com/article/first-layer-issues_1804"
+    },
+    {
+      "id": "schoolveiligheid",
+      "label": "NIOSH: veilig 3D-printen in scholen en makerspaces",
+      "url": "https://www.cdc.gov/niosh/docs/2024-103/"
+    }
+  ]
+}

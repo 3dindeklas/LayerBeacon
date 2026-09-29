@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "id": "bambu-p1s",
+  "name": "Bambu Lab P1S",
+  "route": "printer-bambu-p1s.html",
+  "slicerId": "bambu-studio",
+  "profileName": "Bambu Lab P1S",
+  "buildVolumeMm": [
+    256,
+    256,
+    256
+  ],
+  "filamentDiameterMm": 1.75,
+  "standardNozzleMm": 0.4,
+  "offlineMedia": "microSD",
+  "review": {
+    "contentStatus": "initial-guide",
+    "firmware": null,
+    "testedAtSchool": false
+  },
+  "defaultSetup": "single",
+  "setups": [
+    {
+      "id": "single",
+      "label": "Externe rol · één materiaal",
+      "capacity": 1,
+      "note": "Gebruik een passende rol en het profiel voor de gemonteerde nozzle en bouwplaat."
+    },
+    {
+      "id": "multicolor",
+      "label": "Met AMS · origineel",
+      "capacity": 4,
+      "note": "Deze uitleg gaat uit van één originele AMS met vier rolposities. Gebruik voor andere AMS-uitvoeringen de bijbehorende documentatie."
+    }
+  ],
+  "patches": [
+    {
+      "collection": "steps",
+      "id": "step-1",
+      "mode": "append",
+      "body": [
+        {
+          "type": "p",
+          "text": "Houd bij de P1S ook de afvaluitgang en ventilatieopeningen vrij. Volg voor deur en deksel het advies bij het gekozen filament."
+        }
+      ]
+    },
+    {
+      "collection": "steps",
+      "id": "step-2",
+      "mode": "append",
+      "body": [
+        {
+          "type": "p",
+          "text": "Controleer bij AMS de rolposities en materiaalgegevens in Bambu Studio. Een kleur in het project moet aan de juiste aanwezige rol gekoppeld zijn.",
+          "setups": [
+            "multicolor"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Kies de externe spoel als aanvoerroute; controleer vóór de print dat je niet per ongeluk AMS hebt geselecteerd.",
+          "setups": [
+            "single"
+          ]
+        }
+      ]
+    },
+    {
+      "collection": "cases",
+      "id": "fout-eerste-laag",
+      "mode": "append",
+      "body": [
+        {
+          "type": "p",
+          "text": "P1S: controleer in Bambu Studio het gekozen type bouwplaat. Reinig volgens het advies voor die plaat en laat de bedmeting uitvoeren."
+        }
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "fout-ams-aanvoer",
+      "title": "AMS laadt niet of trekt niet terug",
+      "body": [
+        {
+          "type": "p",
+          "text": "Noteer de volledige HMS-melding en de betrokken rolpositie. Controleer of de rol vrij draait en het zichtbare filamentpad geen knikken of kruislussen heeft."
+        },
+        {
+          "type": "p",
+          "text": "Forceer geen draad en herhaal de laadpoging niet eindeloos. Volg de officiële AMS-procedure voor het exacte onderdeel; schakel bij een breuk of blokkade de beheerder in."
+        },
+        {
+          "type": "link",
+          "text": "Officiële instructie ↗",
+          "href": "https://wiki.bambulab.com/en/ams/troubleshooting/ams-loading-unloading-failure"
+        }
+      ],
+      "subtitle": "Controleer eerst rol, route en de volledige foutmelding",
+      "setups": [
+        "multicolor"
+      ],
+      "sourceIds": [
+        "ams-loading"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "id": "faq-p1s-ams",
+      "title": "Kan elke materiaalwisselaar op de P1S?",
+      "body": [
+        {
+          "type": "p",
+          "text": "Kies een voor de P1S geschikte AMS-uitvoering met de benodigde aansluitonderdelen. Neem instellingen of onderdelen van een AMS lite niet als uitgangspunt."
+        }
+      ],
+      "group": "Filament & aanvoer",
+      "sourceIds": [
+        "p1s-specs"
+      ]
+    }
+  ],
+  "maintenance": [
+    {
+      "id": "maintenance-model",
+      "title": "Volgens de fabrikant",
+      "body": [
+        {
+          "type": "p",
+          "text": "Gebruik de onderhoudsinstructie voor {{printerName}}. Neem smeermiddelen, intervallen en demontagestappen van een ander model niet over."
+        }
+      ]
+    }
+  ],
+  "downloads": [],
+  "sources": [
+    {
+      "id": "p1s-specs",
+      "label": "Bambu Lab P1S: specificaties",
+      "url": "https://eu.store.bambulab.com/products/p1s",
+      "reviewedAt": "2026-09-28"
+    },
+    {
+      "id": "ams-loading",
+      "label": "AMS: problemen bij laden en ontladen",
+      "url": "https://wiki.bambulab.com/en/ams/troubleshooting/ams-loading-unloading-failure",
+      "reviewedAt": "2026-09-29"
+    }
+  ],
+  "supportLinks": [
+    {
+      "label": "Bambu Lab Support",
+      "url": "https://bambulab.com/en/support"
+    }
+  ],
+  "scopeNote": "Deze gids gaat over de P1S. Controleer bij een AMS welke generatie en aansluitonderdelen aanwezig zijn; de instructies voor AMS lite zijn niet uitwisselbaar."
+}

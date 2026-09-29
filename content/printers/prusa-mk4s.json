@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 2,
+  "id": "prusa-mk4s",
+  "name": "Original Prusa MK4S",
+  "route": "printer-prusa-mk4s.html",
+  "slicerId": "prusaslicer",
+  "profileName": "Original Prusa MK4S",
+  "buildVolumeMm": [
+    250,
+    210,
+    220
+  ],
+  "filamentDiameterMm": 1.75,
+  "standardNozzleMm": 0.4,
+  "offlineMedia": "USB",
+  "review": {
+    "contentStatus": "initial-guide",
+    "firmware": null,
+    "testedAtSchool": false
+  },
+  "defaultSetup": "single",
+  "setups": [
+    {
+      "id": "single",
+      "label": "Externe rol · één materiaal",
+      "capacity": 1,
+      "note": "Gebruik een passende rol en het profiel voor de gemonteerde nozzle en bouwplaat."
+    },
+    {
+      "id": "multicolor",
+      "label": "Met MMU3",
+      "capacity": 5,
+      "note": "Controleer de uitvoering van de uitbreiding en de materiaalcompatibiliteit. De aanduiding geldt voor één MMU3."
+    }
+  ],
+  "patches": [
+    {
+      "collection": "steps",
+      "id": "step-1",
+      "mode": "append",
+      "body": [
+        {
+          "type": "p",
+          "text": "MK4S: houd vóór en achter de printer ruimte vrij voor het bewegende bed."
+        }
+      ]
+    },
+    {
+      "collection": "steps",
+      "id": "step-2",
+      "mode": "append",
+      "body": [
+        {
+          "type": "p",
+          "text": "Met MMU3: controleer dat het printerprofiel en de materiaalposities passen bij de geïnstalleerde MMU3. Test een wissel pas nadat één kleur goed print.",
+          "setups": [
+            "multicolor"
+          ]
+        }
+      ]
+    },
+    {
+      "collection": "cases",
+      "id": "fout-eerste-laag",
+      "mode": "replace",
+      "item": {
+        "id": "fout-eerste-laag",
+        "title": "De eerste laag blijft niet plakken",
+        "body": [
+          {
+            "type": "p",
+            "text": "Stop de print. Controleer bouwplaat, materiaalprofiel en restmateriaal op de nozzle. De MK4S gebruikt de loadcell bij het bepalen van de eerste laag."
+          },
+          {
+            "type": "p",
+            "text": "Controleer ook of de rol vrij afwikkelt. Gebruik de MK4S-procedure bij een terugkerende meetfout; corrigeer dit niet met een willekeurig Live Z-advies voor oudere Prusa-modellen."
+          }
+        ],
+        "subtitle": "Controleer bouwplaat, nozzle en loadcellmeting",
+        "sourceIds": [
+          "mk4s-loadcell"
+        ]
+      }
+    }
+  ],
+  "cases": [
+    {
+      "id": "fout-26834",
+      "title": "26834: Nozzle Cleaning Failed",
+      "body": [
+        {
+          "type": "p",
+          "text": "Breek de print af als de nozzlecontrole blijft mislukken. Controleer de plaat, vervuiling rond de nozzle en of de rol vrij kan afwikkelen."
+        },
+        {
+          "type": "p",
+          "text": "Gebruik de reinigingswizard en de officiële MK4S-procedure. Laat controle van nozzlebevestiging of loadcell-onderdelen aan de beheerder over; neem geen stappen voor de XL of CORE One over."
+        },
+        {
+          "type": "link",
+          "text": "Officiële instructie ↗",
+          "href": "https://help.prusa3d.com/article/nozzle-cleaning-failed-31834-core-one-35834-core-one-l-26834-mk4s-13834-mk4-27834-mk3-9s-21834-mk3-9-17834-xl_689429"
+        }
+      ],
+      "code": "26834",
+      "subtitle": "De controle vóór het printen slaagt niet",
+      "sourceIds": [
+        "mk4s-cleaning"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "id": "faq-mk4s-live-z",
+      "title": "Moet ik Live Z instellen zoals bij oudere Prusa-printers?",
+      "body": [
+        {
+          "type": "p",
+          "text": "De MK4S gebruikt een loadcell om het contact met de plaat te meten. Neem een handmatige eerstelaagprocedure voor een ouder model niet zomaar over. Onderzoek bij een probleem eerst plaat, nozzle en filamentroute."
+        }
+      ],
+      "group": "Printer & bestanden",
+      "sourceIds": [
+        "mk4s-loadcell"
+      ]
+    }
+  ],
+  "maintenance": [
+    {
+      "id": "maintenance-model",
+      "title": "Volgens de fabrikant",
+      "body": [
+        {
+          "type": "p",
+          "text": "Gebruik de onderhoudsinstructie voor {{printerName}}. Neem smeermiddelen, intervallen en demontagestappen van een ander model niet over."
+        }
+      ]
+    }
+  ],
+  "downloads": [],
+  "sources": [
+    {
+      "id": "mk4s-specs",
+      "label": "Original Prusa MK4S: specificaties",
+      "url": "https://www.prusa3d.com/product/original-prusa-mk4s-3d-printer/",
+      "reviewedAt": "2026-09-28"
+    },
+    {
+      "id": "mk4s-cleaning",
+      "label": "Prusa: Nozzle Cleaning Failed (#26834 op MK4S)",
+      "url": "https://help.prusa3d.com/article/nozzle-cleaning-failed-31834-core-one-35834-core-one-l-26834-mk4s-13834-mk4-27834-mk3-9s-21834-mk3-9-17834-xl_689429",
+      "reviewedAt": "2026-09-29"
+    },
+    {
+      "id": "mk4s-loadcell",
+      "label": "Prusa: loadcell bij MK4/S",
+      "url": "https://help.prusa3d.com/article/loadcell-mk4-s-mk3-9-s-xl_401253",
+      "reviewedAt": "2026-09-29"
+    },
+    {
+      "id": "mk4s-mmu3",
+      "label": "Prusa: MMU3 voor MK4S en nozzlekeuze",
+      "url": "https://www.prusa3d.com/de/produkt/original-prusa-mmu3-for-mk4s-mk3-9s-full-kit/",
+      "reviewedAt": "2026-09-28"
+    }
+  ],
+  "supportLinks": [
+    {
+      "label": "Prusa: MK4S-documentatie en hulp",
+      "url": "https://help.prusa3d.com/product/mk4s"
+    }
+  ],
+  "scopeNote": "Controleer de gemonteerde nozzle en eventuele MMU3-uitvoering. Een MK4S met high-flow-nozzle vraagt een passend profiel; de materiaalwisselaar is een afzonderlijke uitbreiding."
+}
